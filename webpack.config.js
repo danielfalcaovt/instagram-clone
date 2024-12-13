@@ -1,55 +1,58 @@
-import { join } from "path";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+/* eslint-disable @typescript-eslint/no-require-imports */
+const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
-export const mode = "development";
-export const entry = "./src/main/index.tsx";
-export const output = {
-  path: join(__dirname, "public/js"), // pasta aonde será gerada o resultado em js do bundle
-  publicPath: "/public/js", // caminho do public
-  filename: "bundle.js", // nome do arquivo
-};
-export const resolve = {
-  extensions: [".js", ".ts", ".tsx", "scss"], // extensões para o bundle
-  alias: {
-    "@": join(__dirname, "src"), // sempre que encontrar um @ substituir pela pasta source
+module.exports = {
+  mode: "development", // subentendível
+  entry: "./src/main/index.tsx", // primeiro script à rodar na aplicação
+  output: {
+    path: path.join(__dirname, "public/js"), // pasta aonde será gerada o resultado em js do bundle
+    publicPath: "/public/js", // caminho do public
+    filename: "bundle.js", // nome do arquivo
   },
-};
-export const module = {
-  rules: [
-    {
-      test: /\.ts(x?)$/,
-      loader: "ts-loader",
-      exclude: "/node_modules",
+  resolve: {
+    extensions: [".js", ".ts", ".tsx", "scss"], // extensões para o bundle
+    alias: {
+      "@": path.join(__dirname, "src"), // sempre que encontrar um @ substituir pela pasta source
     },
-    {
-      test: /\.scss$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            modules: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts(x?)$/,
+        loader: "ts-loader",
+        exclude: "/node_modules",
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
           },
-        },
-        "sass-loader",
-      ],
+          "sass-loader",
+        ],
+      },
+    ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
     },
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    historyApiFallback: true,
+    port: 5173,
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      React: "react",
+    }),
   ],
 };
-export const devServer = {
-  static: {
-    directory: join(__dirname, "public"),
-  },
-  devMiddleware: {
-    writeToDisk: true,
-  },
-  historyApiFallback: true,
-  port: 5173,
-};
-export const externals = {
-  react: "React",
-  "react-dom": "ReactDOM",
-};
-export const plugins = [
-  new CleanWebpackPlugin(),
-];
