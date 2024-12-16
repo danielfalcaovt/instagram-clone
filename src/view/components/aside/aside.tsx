@@ -9,7 +9,6 @@ export default function Aside(): JSX.Element {
     <aside className={styles.asideContainer}>
       <AsideLogo />
       <Navbar />
-      <div>Menu Button</div>
     </aside>
   )
 }

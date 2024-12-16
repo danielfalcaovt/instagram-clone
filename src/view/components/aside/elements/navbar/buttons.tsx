@@ -4,7 +4,6 @@ export const HomeIcon: React.FC = () => {
   return (
     <svg
       aria-label="Home"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -21,7 +20,6 @@ export const SearchIcon: React.FC = () => {
   return (
     <svg
       aria-label="Search"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -56,7 +54,6 @@ export const ExploreIcon: React.FC = () => {
   return (
     <svg
       aria-label="Explore"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -94,7 +91,6 @@ export const ReelsIcon: React.FC = () => {
   return (
     <svg
       aria-label="Reels"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -154,7 +150,6 @@ export const MessagesIcon: React.FC = () => {
   return (
     <svg
       aria-label="Messenger"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -181,7 +176,6 @@ export const NotificationsIcon: React.FC = () => {
   return (
     <svg
       aria-label="Notifications"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -198,7 +192,6 @@ export const CreateIcon: React.FC = () => {
   return (
     <svg
       aria-label="New post"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
@@ -244,7 +237,6 @@ export const MenuIcon: React.FC = () => {
   return (
     <svg
       aria-label="Settings"
-      className="x1lliihq x1n2onr6 x5n08af"
       fill="currentColor"
       height="24"
       role="img"
