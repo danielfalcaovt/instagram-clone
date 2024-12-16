@@ -1,0 +1,10 @@
+.homeContainer {
+  display: grid;
+  grid-template-columns: 244px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homeContainer>section {
+  overflow-y: scroll;
+}
