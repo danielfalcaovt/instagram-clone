@@ -1,3 +1,5 @@
+@use '../../../../styles/colors.scss' as *;
+
 .navbarButton {
   display: flex;
   justify-content: flex-start;
@@ -8,14 +10,30 @@
   color: white;
   font-size: 16px;
   font-weight: 400;
-  width: 100%;
   padding: 12px;
   margin: 4px 0px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.23s;
 }
 
-.navbarButton>div {
+.navbarButton:hover {
+  background: $hover-overlay;
+}
+
+.navbarButton div {
   height: 24px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.navbarButton svg {
+  max-width: 24px;
+}
+
+.navbarButton img {
+  border-radius: 50%;
+  max-width: 24px;
 }
