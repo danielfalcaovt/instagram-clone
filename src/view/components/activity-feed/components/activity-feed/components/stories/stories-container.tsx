@@ -2,41 +2,37 @@
 
 import React from "react";
 import * as styles from "./stories-container-styles.scss";
+import { UserStory } from "@/domain/protocols/user-story";
 
 const images = {
   NOTFOUND: "/assets/image-not-found.jpg",
 };
 
 export const StoriesContainer: React.FC<any> = () => {
-  const data: any[] = [
+  const data: UserStory[] = [
     {
-      id: 1,
+      id: '1',
       name: "billieeilish",
-      img: undefined,
       status: true,
     },
     {
-      id: 2,
+      id: '2',
       name: "d4vd",
-      img: undefined,
       status: true,
     },
     {
-      id: 3,
+      id: '3',
       name: "danielfalcaovt",
-      img: undefined,
       status: true,
     },
     {
-      id: 4,
+      id: '4',
       name: "deenedev",
-      img: undefined,
       status: true,
     },
     {
-      id: 5,
+      id: '5',
       name: "nomegrande",
-      img: undefined,
       status: true,
     },
   ];
@@ -48,7 +44,7 @@ export const StoriesContainer: React.FC<any> = () => {
             <li className={styles.story} key={userStory.id}>
               <div className={styles.storyProfileImage}>
                 <span>
-                  <img src={userStory.img || images.NOTFOUND} alt="user image" />
+                  <img src={(userStory.img && String(userStory.img)) || images.NOTFOUND} alt="user image" />
                 </span>
                 <canvas
                   className={styles[userStory.status ? "active" : "finished"]}
