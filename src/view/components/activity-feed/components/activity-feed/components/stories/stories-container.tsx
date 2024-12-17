@@ -2,7 +2,7 @@
 
 import React from "react";
 import * as styles from "./stories-container-styles.scss";
-import { UserStory } from "@/domain/protocols/user-story";
+import { UserStory } from "@/domain/protocols/user/story";
 
 const images = {
   NOTFOUND: "/assets/image-not-found.jpg",
