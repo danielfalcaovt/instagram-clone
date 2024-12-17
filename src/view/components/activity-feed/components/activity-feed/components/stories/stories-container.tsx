@@ -3,10 +3,7 @@
 import React from "react";
 import * as styles from "./stories-container-styles.scss";
 import { UserStory } from "@/domain/protocols/user/story";
-
-const images = {
-  NOTFOUND: "/assets/image-not-found.jpg",
-};
+import { imagesPresets } from "@/view/helpers/image-preset-helper";
 
 export const StoriesContainer: React.FC<any> = () => {
   const data: UserStory[] = [
@@ -44,7 +41,7 @@ export const StoriesContainer: React.FC<any> = () => {
             <li className={styles.story} key={userStory.id}>
               <div className={styles.storyProfileImage}>
                 <span>
-                  <img src={(userStory.img && String(userStory.img)) || images.NOTFOUND} alt="user image" />
+                  <img src={(userStory.img && String(userStory.img)) || imagesPresets.NOTFOUND} alt="user image" />
                 </span>
                 <canvas
                   className={styles[userStory.status ? "active" : "finished"]}
