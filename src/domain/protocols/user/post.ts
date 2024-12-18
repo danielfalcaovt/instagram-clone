@@ -1,3 +1,5 @@
+import { Audio } from "../audio/audio"
+import { Local } from "../local/local"
 import { User } from "./user"
 
 export interface UserPost {
@@ -9,6 +11,8 @@ export interface UserPost {
   comments: Comment[]
   shared_count: number
   created_at: Date
+  audio?: Audio
+  local?: Local
   user: User
 }
 

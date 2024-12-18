@@ -5,5 +5,5 @@ export interface GetManyPostsByUser {
 }
 
 export type GetUserPostModel = {
-  time_moved: string
+  time_moved?: string
 } & UserPost

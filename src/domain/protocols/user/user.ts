@@ -4,4 +4,5 @@ export interface User {
   name: string
   email: string
   profile_img?: string | ArrayBuffer
+  verification?: boolean
 }

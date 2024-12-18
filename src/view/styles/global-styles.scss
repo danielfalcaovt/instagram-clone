@@ -10,4 +10,16 @@
 body {
   background: $default-bg;
   overflow-y: hidden;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  outline: 0px;
+}
+
+button:active, button:focus {
+  outline: 0px;
 }
